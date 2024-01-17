@@ -1,0 +1,79 @@
+body{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+
+header {
+    height: 60px;
+    font-family: 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+
+#upload-section {
+    height: 110px;
+    width: 80%;
+    align-self: center;
+    border: 1px dashed black;
+    margin-top: 10px;
+    display: flex ;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+#upload-section h4 {
+    margin: 10px;
+}
+
+#upload-section form {
+    height: 90px;
+    width: 200px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+#upload-section form button {
+    width: 70px;
+    margin: 20px 0px 0px 60px;
+    background-color: lightskyblue;
+    border-radius: 5px;
+}
+
+
+#list-section {
+    height: 70vh;
+    width: 100%;
+    margin-top: 5px;
+    overflow-y: scroll;
+    display: grid;
+    place-items: center;
+}
+
+#list-section h3 {
+    margin: 5px;
+}
+
+
+#list-tile {
+    height: 40px;
+    width: 90%;
+    margin: 5px;
+    display: flex;
+    flex-direction: row;
+    border: 1px solid black;
+}
+
+.item-number {
+    width: 5%;
+    display: grid;
+    place-items: center;
+    
+}
