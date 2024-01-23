@@ -40,7 +40,7 @@ header {
 }
 
 
-#upload-section form button {
+#upload-submit-btn {
     width: 70px;
     margin: 20px 0px 0px 60px;
     background-color: lightskyblue;
@@ -53,14 +53,22 @@ header {
     width: 100%;
     margin-top: 5px;
     overflow-y: scroll;
-    display: grid;
-    place-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #list-section h3 {
     margin: 5px;
+    height: 20px;
 }
 
+#list-container {
+    width: 100%;
+    display: grid ;
+    place-items: center;
+
+}
 
 #list-tile {
     height: 40px;

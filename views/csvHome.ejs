@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../assets/style/style.css">
+    <link rel="stylesheet" href="./style/homePageStyle.css">
     <title>CSV Upload | Home</title>
 </head>
 
@@ -19,34 +19,38 @@
             <h4>
                 Upload a .CSV file here
             </h4>
-            <form action="/upload" method="post" enctype="multipart/form-data">
+            <form action="/csv/upload" method="post" enctype="multipart/form-data">
                 <input type="file" name="csvFile" id="">
 
-                <button id="upload-submit-btn">
-                    Submit
-                </button>
+                <input type="submit" id="upload-submit-btn">
+                    
+                
             </form>
         </section>
         <section id="list-section">
             <h3>
                 Uploaded Files
             </h3>
-                <% for(let i=0 ; i< 10 ; i++) {%>
+               <div id="list-container">
+                <% for(let i=0 ; i< csvFiles.length; i++) {%>
                     <div id="list-tile">
                         <div class="item-number">
                             <%= i+1 %>
                         </div>
                         <div>
-                            
+                            <%=csvFiles[i].fileName %>
                         </div>
-                        <div>
-
+                        <div id="delete-button">
+                            <button onclick="deleteFile('<%= csvFiles[i].id %>')" >
+                                delete
+                            </button>
                         </div>
                         <div>
 
                         </div>
                     </div>
                     <% }%>
+               </div>
         </section>
 </body>
 
