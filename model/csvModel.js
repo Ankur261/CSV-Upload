@@ -13,7 +13,7 @@ const csvSchema = new mongoose.Schema(
         }
     },
     {
-        timeStamps: true,
+        timeStamps: true
     }
 ) ;
 

@@ -1,0 +1,38 @@
+body {
+}
+
+header {
+    background-color: black;
+    text-align: center;
+}
+
+h1 {
+    color: white;
+}
+
+#csv-table {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+    text-align: left;
+}
+
+#csv-table td,
+#csv-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+
+#csv-table tr:hover {
+
+    background-color: #ddd;
+}
+
+#csv-table th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: rgb(79, 140, 143);
+    color: white;
+}

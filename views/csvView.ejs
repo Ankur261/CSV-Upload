@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../style/csvViewStyle.css">
+    <title>CSV View</title>
+</head>
+<body>
+    <header>
+        <h1><%= fileName%></h1>
+    </header>
+   
+    <table id="csv-table" border="1">
+        <thead>
+          <tr>
+            <% Object.keys(fileContent[0]).forEach(header => { %>
+              <th><%= header %></th>
+            <% }); %>
+          </tr>
+        </thead>
+        <tbody>
+          <% fileContent.forEach(row => { %>
+            <tr>
+              <% Object.values(row).forEach(value => { %>
+                <td><%= value %></td>
+              <% }); %>
+            </tr>
+          <% }); %>
+        </tbody>
+      </table>
+   
+</body>
+
+<script>
+
+</script>
+</html>

@@ -70,7 +70,7 @@ header {
 
 }
 
-#list-tile {
+.list-tile {
     height: 40px;
     width: 90%;
     margin: 5px;
@@ -79,9 +79,52 @@ header {
     border: 1px solid black;
 }
 
-.item-number {
-    width: 5%;
+.list-tile div {
     display: grid;
     place-items: center;
-    
+    color: black;
+}
+
+.item-number {
+    width: 5%;
+    flex: 1;
+}
+
+.file-name {
+   
+    color:blue ;
+    flex: 8;
+}
+
+.delete-button {
+    width: auto;
+    flex: 4;
+}
+
+
+
+.delete-button .material-symbols-outlined {
+    color: red;
+    cursor: pointer;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+  
+}
+
+.open-button {
+    flex: 4;
+}
+
+.open-button .material-symbols-outlined {
+    color: blue;
+    cursor: pointer;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+  
 }
