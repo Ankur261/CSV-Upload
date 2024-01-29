@@ -22,7 +22,7 @@
             Upload a .CSV file here
         </h4>
         <form action="/csv/upload" method="post" enctype="multipart/form-data">
-            <input type="file" name="csvFile" id="">
+            <input type="file" name="csvFile" id="fileInput" required>
 
             <input type="submit" id="upload-submit-btn">
 
@@ -41,12 +41,6 @@
                     </div>
                     <div class="file-name">
                         <%= csvFiles[i].fileName %>
-                    </div>
-                    <div class="created-at">
-                        <%= csvFiles[i].createdAt %>
-                    </div>
-                    <div class="updated-at">
-                        <%= csvFiles[i].updatedAt %>
                     </div>
                     <div class="delete-button">
                         <div onclick="deleteFile('<%=csvFiles[i].id %>')">
@@ -78,6 +72,22 @@
         })
         window.location.href = '/csv';
     }
+
+
+    const fileInput = document.getElementById('fileInput');
+
+    fileInput.addEventListener('change', function () {
+        const allowedExtensions = ['csv'];
+        const fileName = this.value.split('.').pop().toLowerCase();
+
+        if (!allowedExtensions.includes(fileName)) {
+            alert('Error: Please upload a CSV file.');
+            // You can also update an error message element on your page instead of using an alert.
+            // For example: document.getElementById('errorMessage').innerText = 'Error: Please upload a CSV file.';
+            this.value = ''; // Clear the file input to prevent submission.
+        }
+    });
+
 </script>
 
 </html>

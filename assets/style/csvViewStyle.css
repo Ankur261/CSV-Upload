@@ -1,5 +1,4 @@
-body {
-}
+body {}
 
 header {
     background-color: black;
@@ -8,6 +7,23 @@ header {
 
 h1 {
     color: white;
+    margin-bottom: 10px;
+}
+
+#search-box {
+    height: 30px;
+    display: grid;
+    place-items: center;
+    margin: 0px;
+    
+}
+
+#search-input {
+    width: 300px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 20px;
+    border: 2px solid black;
 }
 
 #csv-table {
@@ -15,6 +31,12 @@ h1 {
     border-collapse: collapse;
     width: 100%;
     text-align: left;
+    margin-top: 15px;
+}
+
+.sort {
+    	border-radius: 10px;
+        border: 1px solid black;
 }
 
 #csv-table td,
