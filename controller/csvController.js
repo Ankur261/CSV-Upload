@@ -3,6 +3,8 @@ const csv = require('fast-csv');
 const mongoose = require('../config/mongoose');
 const path = require('path');
 
+
+// Controller for Home Page of the application 
 module.exports.homePage = async function (req, res) {
 
     const csvFile = await csvModel.find({});
@@ -12,6 +14,7 @@ module.exports.homePage = async function (req, res) {
 
 }
 
+// Controller for delete functionality of CSV file
 module.exports.deleteFile = async function (req, res) {
 
 
@@ -25,6 +28,8 @@ module.exports.deleteFile = async function (req, res) {
 
 }
 
+
+// Controller to open CSV file in the browser in tabular form
 module.exports.openFile = function (req, res) {
     const fileId = req.params.id;
     csvModel.findById(fileId).then(data => {
@@ -45,8 +50,10 @@ module.exports.openFile = function (req, res) {
 
 }
 
+
+// Controller to upload CSV file and save its name and content in MongoDB
 module.exports.csvFileUpload = function (req, res) {
-    
+
     const parsedPath = path.parse(req.file.originalname);
 
     if (parsedPath.ext.toLowerCase() === '.csv') {
@@ -56,16 +63,16 @@ module.exports.csvFileUpload = function (req, res) {
             fileName: csvFileName,
             fileContent: csvFileContent
         }).then(() => {
-            return res.redirect('/csv', {alert: true, message: "CSV file uploaded successfully"});
+            return res.redirect('/csv', { alert: true, message: "CSV file uploaded successfully" });
         }).catch((err) => {
             console.log(err);
-            return res.send({alert:"internal server error"})
+            return res.send({ alert: "internal server error" })
         })
     }
 
     else
 
-    return res.json({alert: "Uploaded file extension is not .csv"})
+        return res.json({ alert: "Uploaded file extension is not .csv" })
 
 
 }
