@@ -12,7 +12,7 @@ app.use(express.urlencoded({extended: true})) ;
 app.set('view engine', 'ejs') ;
 app.set('ejs', './views') ;
 
-app.use('/csv', require('./routes/csvRouter')) ;
+app.use('/', require('./routes/csvRouter')) ;
 
 
 
