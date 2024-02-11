@@ -52,10 +52,9 @@ module.exports.openFile = function (req, res) {
 
 
 // Controller to upload CSV file and save its name and content in MongoDB
-module.exports.csvFileUpload = function (req, res) {
+module.exports.csvFileUpload = function  (req, res) {
 
     const parsedPath = path.parse(req.file.originalname);
-
     if (parsedPath.ext.toLowerCase() === '.csv') {
         const csvFileContent = req.file.buffer.toString();
         const csvFileName = req.file.originalname;
@@ -63,10 +62,10 @@ module.exports.csvFileUpload = function (req, res) {
             fileName: csvFileName,
             fileContent: csvFileContent
         }).then(() => {
-            return res.redirect('/csv', { alert: true, message: "CSV file uploaded successfully" });
+            return res.redirect('back');
         }).catch((err) => {
             console.log(err);
-            return res.send({ alert: "internal server error" })
+            return res.send({ alert: "internal server error"})
         })
     }
 

@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 
 
-const db = mongoose.connection;
+const db = mongoose.connection; 
 
 db.on('error', (error) => {
   console.error("Error connecting to MongoDB:", error.message);

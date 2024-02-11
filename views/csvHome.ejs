@@ -19,9 +19,9 @@
 
     <section id="upload-section">
         <h4>
-            Upload a .CSV file here
+            Upload a .csv file here
         </h4>
-        <form action="/csv/upload" method="post" enctype="multipart/form-data">
+        <form action="/upload" method="post" enctype="multipart/form-data">
             <input type="file" name="csvFile" id="fileInput" required>
 
             <input type="submit" id="upload-submit-btn">
@@ -49,7 +49,7 @@
                         </div>
                     </div>
                     <div class="open-button">
-                        <a href="/csv/open/<%=csvFiles[i].id %>">
+                        <a href="/open/<%=csvFiles[i].id %>">
                             <span class="material-symbols-outlined">
                                 open_in_new
                             </span>
@@ -64,17 +64,20 @@
     </section>
 </body>
 
-<script>
+<script> 
     // Delete function - to delete CSV file document from MongoDB
     async function deleteFile(fileId) {
-        fetch(`csv/delete/${fileId}`, { method: 'DELETE' }).then(response => { console.log(response.json()) }).then().catch((err) => {
+        fetch(`/delete/${fileId}`, { method: 'DELETE' }).then(response => { console.log(response.json()) }).then().catch((err) => {
             console.error(err);
         })
-        window.location.href = '/csv';
+        window.location.href = '/';
     }
 
-    // Validation to upload .csv type of files only 
+  
     const fileInput = document.getElementById('fileInput');
+    const uploadSubmitBtn = document.getElementById('upload-submit-btn') ;
+
+  // Validation to upload .csv type of files only 
     fileInput.addEventListener('change', function () {
         const allowedExtensions = ['csv'];
         const fileName = this.value.split('.').pop().toLowerCase();
@@ -84,6 +87,11 @@
             this.value = '';
         }
     });
+
+   //resetting uploaded file from input
+    uploadSubmitBtn.addEventListener('click', function(e) {
+        uploadSubmitBtn.reset() ;
+    })
 
 </script>
 
