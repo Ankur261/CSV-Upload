@@ -7,9 +7,7 @@ const path = require('path');
 // Controller for Home Page of the application 
 module.exports.homePage = async function (req, res) {
 
-    const csvFile = await csvModel.find({}).timeout(30000).exec(function(err, data){
-        console.log('Find sucess')
-    });
+    const csvFile = await csvModel.find({}) ;
 
     return res.render('csvHome', { csvFiles: csvFile });
 
